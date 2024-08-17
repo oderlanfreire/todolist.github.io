@@ -1,0 +1,17 @@
+body{
+    background-color: #2B2D31;
+    font-family: 'Inter', sans-serif;
+    color: #FFFFFF;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo{
+    width: 200px;
+    height: auto;
+    margin-top: 4%;
+}
