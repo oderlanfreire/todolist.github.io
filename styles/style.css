@@ -1,17 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
     background-color: #2B2D31;
     font-family: 'Inter', sans-serif;
     color: #FFFFFF;
 }
 
-header{
+header#logo-header{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    margin-bottom: 5%;
 }
 
 #logo{
     width: 200px;
     height: auto;
-    margin-top: 4%;
+    margin-top: 35%;
+}
+
+main, footer{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    max-width: 1120px;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+#tarefas-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    justify-self: flex-end;
+    width: 100%;
+    margin-left: 78vh;
+}
+
+
+#tarefas-header hr{
+    width: 30%;
+    border-color: #5b656b;
+}
+
+#subcontent{
+    color: #BDBDBD;
+    text-align: center;
+    font-size: 9px;
+}
+
+button{
+    background-color: inherit;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 5%;
+}
+
+button img{
+    height: 70px;
 }

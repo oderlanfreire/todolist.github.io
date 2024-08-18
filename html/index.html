@@ -10,20 +10,30 @@
     <title>To Do List</title>
 </head>
 <body>
-    <header>
+    <header id="logo-header">
         <div>
-            <img id="logo" src="../assets/img/Logo.svg" alt="To Do List logo">
+            <img id="logo" src="../components/img/Logo.svg" alt="to-do-list-logo">
         </div>
     </header>
     <main>
-        <div id="tarefas-titulo">
-            <h1 id="tarefas">Tarefas</h1>
-            <hr>
-        </div>
-
+        <section>
+            <header id="tarefas-header">
+                <span>Tarefas</span>
+                <br>
+                <hr>
+            </header>
+        </section>
+        <section id="content-section">
+            <div id="container">
+                <p id="main-content">Você ainda não criou nenhuma tarefa</p>
+                <p id="subcontent">Não se preocupe, suas novas tarefas irão aparecer aqui.</p>
+            </div>
+        </section>
     </main>
     <footer>
-
+        <button>
+            <img src="../components/img/botão.svg" alt="botão-cadastrar-tarefa">
+        </button>
     </footer>
 </body>
 </html>
