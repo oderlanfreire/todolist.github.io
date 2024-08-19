@@ -9,8 +9,8 @@ body{
     background-color: #2B2D31;
     font-family: 'Inter', sans-serif;
     color: #FFFFFF;
-    padding-left: 20rem;
-    padding-right: 20rem;
+    padding-left: 28rem;
+    padding-right: 28rem;
 }
 
 
@@ -58,16 +58,26 @@ section#content-section{
     gap: 2rem;
 }
 
-p#subcontent{
+#subcontent{
     color: #BDBDBD;
     text-align: center;
-    font-size: 9px;
+    font-size: 0.8rem;
+    gap: 1rem;
+}
+#subcontent2{
+    color: #BDBDBD;
+    text-align: left;
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 5px;
+    margin-left: 7%;
 }
 
 div#container{
     display: flex;
     flex-direction: column;
-    padding: 10% 0;
+    gap: 1rem;
+    
 }
 
 footer#btn-footer{
@@ -83,7 +93,6 @@ button img{
     object-fit: fill;
 }
 
-
 .btn-config{
     background-color: inherit;
     appearance: none;
@@ -95,6 +104,12 @@ button img{
     width: 100%;
 }
 
+#container .container-lbl{
+    display: flex;
+    align-self: flex-start;
+    width: 100vh;
+    gap: 2rem;
+}
 
 #drawer{
     height: 100vh;
@@ -122,11 +137,14 @@ button img{
 
 
 #task-name{
-    height: 2rem;
+    height: 3rem;
     border-radius: .4em;
     font-size: 16px;
     color: white;
     background-color: #35373C;
+    border-color: #535353;
+    border: transparent;
+    outline: none;
 }
 
 #task-description{
@@ -136,6 +154,9 @@ button img{
     font-weight: normal;
     color: white;
     background-color: #35373C;
+    border-color: #535353;
+    border: transparent;
+    outline: none;
 }
 
 #task-buttons{
