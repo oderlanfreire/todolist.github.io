@@ -52,9 +52,10 @@ saveTask.addEventListener('click', ()=>{
 
     if(isNullTask(name.value) === false){
         alert('Erro: Nome da tarefa em branco ou nula.')
-    }else{
-        taskArea.
     }
+    // }else{
+    //     // taskArea.
+    // }
 })
 
 
