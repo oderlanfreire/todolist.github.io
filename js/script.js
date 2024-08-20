@@ -12,8 +12,6 @@ const tasks = []
 function isNullTask(task){
     if(task != '' && task != null){
         return true
-    }else{
-        return false
     }
 }
 
@@ -73,11 +71,12 @@ saveTask.addEventListener('click', ()=>{
         
         let elmContainer = document.createElement('div')
         elmContainer.className = 'container-elm'
+        elmContainer.id='container-elm'
         elmContainer.appendChild(lblContainer)
         elmContainer.appendChild(description)
 
         tasks.push(elmContainer)
-
+        taskArea.classList = 'container2'
         taskArea.innerHTML = ''
         tasks.forEach(task =>{
             taskArea.appendChild(task)
@@ -89,6 +88,7 @@ saveTask.addEventListener('click', ()=>{
     }
 
 })
+
 
 
 //funções visuais 
@@ -108,4 +108,3 @@ saveTask.addEventListener('mouseenter', ()=>{
 saveTask.addEventListener('mouseleave', ()=>{
     saveTask.src = `../components/img/save-btn.svg`
 })
-

@@ -9,8 +9,8 @@ body{
     background-color: #2B2D31;
     font-family: 'Inter', sans-serif;
     color: #FFFFFF;
-    padding-left: 28rem;
-    padding-right: 28rem;
+    padding-left: 25rem;
+    padding-right: 25rem;
 }
 
 
@@ -34,12 +34,18 @@ header#task-header{
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-
+    padding: 0;
+    margin: 0;
+}
+header#task-header hr {
+    margin: 0;
+    padding: 0;
 }
 
 hr{
     width: 100%;
     border-color: #5b656b;
+    box-sizing: border-box;
 }
 
 section{
@@ -108,7 +114,6 @@ button img{
     display: flex;
     align-self: flex-start;
     width: 100vh;
-    gap: 2rem;
 }
 
 #drawer{
@@ -170,7 +175,13 @@ button img{
     margin-top: -3rem;
 }
 
+.container2{
+    gap: 1rem;
+}
 
+.container2:hover{
+    background-color: #35373C;
+}
 
 .closed{
     display: none;
