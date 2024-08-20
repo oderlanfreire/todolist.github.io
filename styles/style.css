@@ -175,6 +175,10 @@ button img{
     margin-top: -3rem;
 }
 
+#check{
+    margin-right: 1rem;
+}
+
 .container2{
     gap: 1rem;
 }
