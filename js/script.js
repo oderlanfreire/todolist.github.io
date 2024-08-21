@@ -19,14 +19,28 @@ function isNullTask(task){
 
 
 //funções dos botões
-btnCreateTask.addEventListener('click', ()=>{
+function openDrawer(){
     drawer.classList.remove('closed')
     backdrop.classList.add('show')
     drawer.classList.add('open')
     console.log(drawer.classList)
     console.log(backdrop.classList)
+}
 
-})
+function closeDrawer(){
+    drawer.classList.remove('open')
+    backdrop.classList.remove('show')
+    drawer.classList.add('closed')
+}
+
+// btnCreateTask.addEventListener('click', ()=>{
+//     drawer.classList.remove('closed')
+//     backdrop.classList.add('show')
+//     drawer.classList.add('open')
+//     console.log(drawer.classList)
+//     console.log(backdrop.classList)
+
+// })
 
 btnCreateTask.addEventListener('mouseenter', ()=>{
     btnCreateTask.src = `../components/img/crate-task-hover.svg`
@@ -49,7 +63,7 @@ btnCloseDrawer.addEventListener('click', ()=>{
 saveTask.addEventListener('click', ()=>{
     let name = document.getElementById('task-name')
     let desc = document.getElementById('task-description')
-    
+
     if(isNullTask(name.value) === false){
         alert('Erro: Nome da tarefa em branco ou nula.')
     }else{
@@ -59,7 +73,6 @@ saveTask.addEventListener('click', ()=>{
 
         let label = document.createElement('label')
         label.textContent = name.value
-
         let description = document.createElement('span')
         description.id='subcontent2'
         description.innerText = desc.value
