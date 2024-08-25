@@ -14,15 +14,17 @@
             <div id="drawer" class="closed">
                 <div id="conteudo">
                     <div id="task-form-content">
-                        <div id="drawer-header">
+                        <header id="drawer-header">
                             <p id="save-drawer">Salvar</p>
                             <p id="task-name-displayed"></p>
-                        </div>
-                        <label for="task-name" id="task-name-lbl">Nome</label><br>
-                        <input type="text" name="task-name" id="task-name" placeholder="Nome da tarefa" autocomplete="off">
-                        <br>
-                        <label for="task-description" id="task-description-lbl">Descrição(opicional)</label><br>
-                        <textarea name="task-description" id="task-description" placeholder="Descrição da tarefa" autocomplete="off"></textarea>
+                        </header>
+                        <section id="form-create-inputs">
+                            <label for="task-name" id="task-name-lbl">Nome</label><br>
+                            <input type="text" name="task-name" id="task-name" placeholder="Nome da tarefa" autocomplete="off">
+                            <br>
+                            <label for="task-description" id="task-description-lbl">Descrição(opicional)</label><br>
+                            <textarea name="task-description" id="task-description" placeholder="Descrição da tarefa" autocomplete="off"></textarea>
+                        </section>
                     </div>
                     <footer id="task-buttons">
                         <button id="close-btn" class="btn-config" onclick="closeDrawer()">Fechar</button>
@@ -35,7 +37,7 @@
                 <img id="logo" src="../components/img/Logo.svg" alt="to-do-list-logo">
             </div>
         </header>
-        <main>
+        <main id="tasks-container">
             <section id="task-section-header">
                 <header id="task-header">
                     <span id="tasks">Tarefas</span>
