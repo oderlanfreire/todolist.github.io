@@ -10,13 +10,10 @@ let taskIndex = null
 // const tasks = []
 
 
-document.addEventListener('DOMContentLoaded', ()=>{
-    carregarTarefas()
-})
-
 
 function carregarTarefas(){
-    const itensContainer = document.getElementById('tasks-container')
+    const itensContainer = document.getElementById('content-section')
+    itensContainer.innerHTML = ''
     const itens = JSON.parse(localStorage.getItem('itens')) || []
     itens.forEach((item, index) =>{
         const divItem  = document.createElement('div')
@@ -169,6 +166,7 @@ function createTask(){
         // name.value = ''
         // desc.value = ''
         drawer.classList.add('closed')
+        carregarTarefas()
         
 }
 
