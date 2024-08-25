@@ -3,9 +3,9 @@ const drawer = document.getElementById('drawer')
 const saveTask = document.getElementById('save-task')
 const backdrop = document.getElementById('backdrop')
 const btnCloseDrawer = document.getElementById('ghost-button-close')
-const taskArea = document.getElementById('container')
-const checkbox = document.getElementById('check')
-const tasks = []
+// const taskArea = document.getElementById('container')
+// const checkbox = document.getElementById('check')
+// const tasks = []
 
 
 //funções de verificação
@@ -33,34 +33,7 @@ function closeDrawer(){
     drawer.classList.add('closed')
 }
 
-// btnCreateTask.addEventListener('click', ()=>{
-//     drawer.classList.remove('closed')
-//     backdrop.classList.add('show')
-//     drawer.classList.add('open')
-//     console.log(drawer.classList)
-//     console.log(backdrop.classList)
-
-// })
-
-btnCreateTask.addEventListener('mouseenter', ()=>{
-    btnCreateTask.src = `../components/img/crate-task-hover.svg`
-})
-
-btnCloseDrawer.addEventListener('mouseout', ()=>{
-    btnCreateTask.src = `../components/img/botão.svg`
-})
-
-btnCreateTask.addEventListener('mouseleave', ()=>{
-    btnCreateTask.src = `../components/img/botão.svg`
-})
-
-btnCloseDrawer.addEventListener('click', ()=>{
-    drawer.classList.remove('open')
-    backdrop.classList.remove('show')
-    drawer.classList.add('closed')
-})
-
-saveTask.addEventListener('click', ()=>{
+function createTask(){
     let name = document.getElementById('task-name')
     let desc = document.getElementById('task-description')
 
@@ -99,25 +72,32 @@ saveTask.addEventListener('click', ()=>{
         desc.value = ''
         drawer.classList.add('closed')
     }
+    
+}
 
+// btnCreateTask.addEventListener('click', ()=>{
+//     drawer.classList.remove('closed')
+//     backdrop.classList.add('show')
+//     drawer.classList.add('open')
+//     console.log(drawer.classList)
+//     console.log(backdrop.classList)
+
+// })
+
+btnCreateTask.addEventListener('mouseenter', ()=>{
+    btnCreateTask.src = `../components/img/crate-task-hover.svg`
 })
 
-
-
-//funções visuais 
-btnCloseDrawer.addEventListener('mouseenter', ()=>{
-    btnCloseDrawer.src = `../components/img/close-btn-hover.svg`
+btnCloseDrawer.addEventListener('mouseout', ()=>{
+    btnCreateTask.src = `../components/img/botão.svg`
 })
 
-btnCloseDrawer.addEventListener('mouseleave', ()=>{
-    btnCloseDrawer.src = `../components/img/close-btn.svg`
+btnCreateTask.addEventListener('mouseleave', ()=>{
+    btnCreateTask.src = `../components/img/botão.svg`
 })
 
-
-saveTask.addEventListener('mouseenter', ()=>{
-    saveTask.src = `../components/img/save-btn-hover.svg`
-})
-
-saveTask.addEventListener('mouseleave', ()=>{
-    saveTask.src = `../components/img/save-btn.svg`
+btnCloseDrawer.addEventListener('click', ()=>{
+    drawer.classList.remove('open')
+    backdrop.classList.remove('show')
+    drawer.classList.add('closed')
 })

@@ -25,7 +25,7 @@
             <section id="content-section">
                 <div id="task-area">
                     <div id="container">
-                        <p id="main-content">Você ainda não criou nenhuma tarefa</p>
+                        <p>Você ainda não criou nenhuma tarefa</p>
                         <p id="subcontent">Não se preocupe, suas novas tarefas irão aparecer aqui.</p>
                     </div>
                 </div>
@@ -46,16 +46,13 @@
                     <textarea name="task-description" id="task-description" placeholder="Descrição da tarefa" autocomplete="off"></textarea>
                 </div>
                 <footer id="task-buttons">
-                    <button id="close-btn" class="form-btn" onclick="closeDrawer()">Fechar</button>
-                    <button id="save-btn" class="form-btn">Salvar</button>
-                    <!-- <button class="btn-config" id="btn-config"><img src="../components/img/close-btn.svg" alt="fechar" id="ghost-button-close"></button> -->
-                    <!-- <button class="btn-config" id="btn-config"><img src="../components/img/save-btn.svg" alt="" id="save-task"></button> -->
+                    <button id="close-btn" class="btn-config" onclick="closeDrawer()">Fechar</button>
+                    <button id="save-btn" class="btn-config" onclick="createTask()">Salvar</button>
                 </footer>
             </div>
     </div>
     <footer id="btn-footer">
-        <button id="btn-add" onclick="openDrawer()">
-        <!-- class="btn-config"> -->
+        <button id="btn-add" class="btn-config" onclick="openDrawer()">
          <span id="plus">+</span> Adicionar
         </button>
     </footer>
