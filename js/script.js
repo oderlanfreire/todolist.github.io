@@ -5,10 +5,10 @@ const backdrop = document.getElementById('backdrop')
 const btnCloseDrawer = document.getElementById('ghost-button-close')
 let taskIndex = null
 
-// const taskArea = document.getElementById('container')
-// const checkbox = document.getElementById('check')
-// const tasks = []
 
+document.addEventListener('DOMContentLoaded', ()=>{
+    carregarTarefas()
+})
 
 
 function carregarTarefas(){
@@ -33,15 +33,18 @@ function carregarTarefas(){
         textContainer.classList.add('text-container')
 
         const label = document.createElement('span')
-        label.innerText = item.label.value
+        label.innerText = item.label
         label.classList.add('task-label')
         label.style.textDecoration = item.checked ? "line-throught" : "none"
 
         const description = document.createElement('span')
-        description.innerText = item.description.value
+        description.innerText = item.description
         description.classList.add('task-description')
         description.style.textDecoration = item.checked ? "line-through" : "none";
 
+
+        const btnContainer = document.createElement('div')
+        btnContainer.classList.add('btn-container')
 
         const editBtn = document.createElement('button')
         editBtn.innerHTML = '&#9998;'
@@ -59,26 +62,22 @@ function carregarTarefas(){
 
         textContainer.appendChild(label)
         textContainer.appendChild(description)
+        btnContainer.appendChild(editBtn)
+        btnContainer.appendChild(deleteBtn)
 
         divItem.appendChild(check)
         divItem.appendChild(textContainer)
-        divItem.appendChild(editBtn)
-        divItem.appendChild(deleteBtn)
+        divItem.appendChild(btnContainer)
+    
 
         itensContainer.appendChild(divItem)
-
         const hr = document.createElement('hr')
+        hr.classList.add('hr-task')
         itensContainer.appendChild(hr)
 
     })
 }
 
-//funções de verificação
-function isNullTask(task){
-    if(task != '' && task != null){
-        return true
-    }
-}
 
 
 //funções dos botões
@@ -112,61 +111,37 @@ function closeDrawer(){
 
 function createTask(){
     
-    let label = document.getElementById('task-name')
-    let description = document.getElementById('task-description')
+    let label = document.getElementById('task-name').value.trim()
+    let description = document.getElementById('task-description').value.trim()
 
-    if(isNullTask(label.value) === false){
+    console.log(label)
+
+    if(label === ''){
         alert('Erro: Nome da tarefa em branco ou nula.')
+        return
     }
 
     const itens = JSON.parse(localStorage.getItem("itens")) || []
 
-    if(itens.some((item, index) => item.label === label )){
-        alert('Tarefa já cadastrada!')
-    }
-
+    
     if(taskIndex === null){
+        if(itens.some((item) => item.label === label )){
+            alert('Tarefa já cadastrada!')
+            return
+        }
         itens.push({checked: false, label, description})
     }else{
         itens[taskIndex].label = label
         itens[taskIndex].description = description
+        taskIndex = null
     }
 
     localStorage.setItem("itens", JSON.stringify(itens))
     closeDrawer()
-
-        // let check = document.createElement('input')
-        // check.id = 'check'
-        // check.type = 'checkbox'
-    
-        // let label = document.createElement('label')
-        // label.textContent = name.value
-        // let description = document.createElement('span')
-        // description.id='subcontent2'
-        // description.innerText = desc.value
-        
-        // let lblContainer = document.createElement('div')
-        // lblContainer.className = 'container-lbl'
-        // lblContainer.appendChild(check)
-        // lblContainer.appendChild(label)
-        
-        // let elmContainer = document.createElement('div')
-        // elmContainer.className = 'container-elm'
-        // elmContainer.id='container-elm'
-        // elmContainer.appendChild(lblContainer)
-        // elmContainer.appendChild(description)
-
-        // tasks.push(elmContainer)
-        // taskArea.classList = 'container2'
-        // taskArea.innerHTML = ''
-        // tasks.forEach(task =>{
-        //     taskArea.appendChild(task)
-        //     taskArea.appendChild(document.createElement('hr'))
-        // })
-        // name.value = ''
-        // desc.value = ''
-        drawer.classList.add('closed')
-        carregarTarefas()
+    drawer.classList.add('closed')
+    document.getElementById('task-name').value = ''
+    document.getElementById('task-description').value = ''
+    carregarTarefas()
         
 }
 
@@ -178,29 +153,4 @@ function deleteItem(index){
     carregarTarefas()
     
 }
-// btnCreateTask.addEventListener('click', ()=>{
-//     drawer.classList.remove('closed')
-//     backdrop.classList.add('show')
-//     drawer.classList.add('open')
-//     console.log(drawer.classList)
-//     console.log(backdrop.classList)
 
-// })
-
-btnCreateTask.addEventListener('mouseenter', ()=>{
-    btnCreateTask.src = `../components/img/crate-task-hover.svg`
-})
-
-btnCloseDrawer.addEventListener('mouseout', ()=>{
-    btnCreateTask.src = `../components/img/botão.svg`
-})
-
-btnCreateTask.addEventListener('mouseleave', ()=>{
-    btnCreateTask.src = `../components/img/botão.svg`
-})
-
-btnCloseDrawer.addEventListener('click', ()=>{
-    drawer.classList.remove('open')
-    backdrop.classList.remove('show')
-    drawer.classList.add('closed')
-})
